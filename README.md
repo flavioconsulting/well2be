@@ -39,7 +39,7 @@ Le plus simple : remplacer le fichier dans `images/` **en gardant exactement le 
 |---|---|
 | `lara-salle.jpg` | Grande photo de l'accueil |
 | `lara-coaching.jpg`, `coaching-1/2/3.jpg` | Section coaching |
-| `madero-outils.jpg`, `madero-1/2.jpg` | Carte madérothérapie (3 photos en bas) |
+| `madero.jpg` | Carte madérothérapie |
 | `lara-portrait.jpg` | Qui suis-je |
 | `bb-1/2/3.jpg`, `force-1/2/3.jpg`, `autre-1/2.jpg` | Parcours sportif |
 | `logo.png`, `logo-small.png`, `favicon.png` | Logo |
