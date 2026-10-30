@@ -183,6 +183,19 @@ body { caret-color: var(--sauge-fonce); }
 .temoin-nom { font-family: 'Yellowtail', cursive; font-size: 1.75rem; line-height: 1.2; color: var(--sauge-fonce); }
 .temoin-presta { font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--caramel-fonce); font-weight: 500; }
 .temoins-nav { display: none; }
+.temoins-sujet { margin: -18px 0 26px; text-align: center; font-size: 0.8125rem; letter-spacing: 0.231em; text-transform: uppercase; font-weight: 500; color: var(--encre); }
+/* Un seul avis : carte centrée, sans carrousel */
+.temoins-piste:has(> .temoin:only-child) { max-width: 760px; margin: 0 auto; }
+
+/* Avis de la partie bien-être (fond sauge) */
+.soins .temoignages { margin: 36px 0 44px; }
+.soins + .temoignages { margin-top: 72px; }
+.bienetre .titre-tarifs, .bienetre .titre-tarifs .script, .bienetre .temoins-sujet { color: var(--creme); }
+.bienetre .temoins-fleche { border-color: var(--creme); color: var(--creme); }
+.bienetre .temoins-fleche:hover { background: var(--creme); color: var(--encre); }
+.bienetre .temoins-point::before { opacity: .4; }
+.bienetre .temoins-point[aria-current="true"]::before { background: var(--creme); opacity: 1; }
+.bienetre .temoins-fleche:focus-visible, .bienetre .temoins-point:focus-visible { outline-color: var(--creme); }
 
 /* Carrousel glissable : le rail suit le doigt, un ressort termine le geste */
 .js-actif .temoins-piste { display: block; max-width: 760px; margin: 0 auto; overflow: hidden; border-radius: 22px; touch-action: pan-y; cursor: grab; }
@@ -296,9 +309,8 @@ body { caret-color: var(--sauge-fonce); }
 .galerie img { width: 100%; height: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 22px; }
 .galerie img:nth-child(2) { border-radius: 999px 999px 22px 22px; }
 
-/* Madérothérapie : photo des outils */
-.soin-media { margin: 18px 0 4px; max-width: 360px; }
-.soin-media img { width: 100%; border-radius: 18px; }
+/* Madérothérapie : galerie de 3 photos en bas de la carte */
+.soin-galerie { flex: 1 1 100%; margin-top: 0; }
 
 /* Récapitulatif des tarifs */
 .recap { background: var(--sable); }

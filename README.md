@@ -7,7 +7,7 @@ Site vitrine statique (HTML/CSS/JS), hébergé sur GitHub Pages. Aucune base de 
 | Fichier | Contenu |
 |---|---|
 | `index.html` | Toute la page d'accueil (textes, tarifs, témoignages) |
-| `mentions-legales.html` | Mentions légales (à compléter : nom, adresse, SIRET, mail, hébergeur) |
+| `mentions-legales.html` | Mentions légales (identité, adresse, SIRET, hébergeur) |
 | `style.css` | Couleurs, polices, mise en page (variables de couleur en haut du fichier) |
 | `script.js` | Carrousel des témoignages et en-tête (rien à modifier en général) |
 | `images/` | Toutes les photos |
@@ -18,7 +18,7 @@ Site vitrine statique (HTML/CSS/JS), hébergé sur GitHub Pages. Aucune base de 
 
 Ouvrir `index.html` (sur GitHub : le fichier → icône crayon), faire Ctrl+F sur la phrase, la modifier, puis « Commit changes ». Le site se met à jour en 1 à 2 minutes.
 
-Les sections sont repérées par des commentaires : `<!-- Accueil -->`, `<!-- Le coaching -->`, `<!-- L'alimentation -->`, `<!-- Bien-être -->`, `<!-- Qui suis-je -->`, `<!-- Parcours sportif -->`, `<!-- Récapitulatif des tarifs -->`, `<!-- Contact -->`.
+Les sections sont repérées par des commentaires : `<!-- Accueil -->`, `<!-- Le coaching -->`, `<!-- Témoignages coaching -->`, `<!-- L'alimentation -->`, `<!-- Bien-être -->`, `<!-- Témoignages deep tissue -->`, `<!-- Témoignages madérothérapie -->`, `<!-- Qui suis-je -->`, `<!-- Parcours sportif -->`, `<!-- Récapitulatif des tarifs -->`, `<!-- Contact -->`.
 
 ## Modifier un prix
 
@@ -39,7 +39,7 @@ Le plus simple : remplacer le fichier dans `images/` **en gardant exactement le 
 |---|---|
 | `lara-salle.jpg` | Grande photo de l'accueil |
 | `lara-coaching.jpg`, `coaching-1/2/3.jpg` | Section coaching |
-| `madero-outils.jpg` | Carte madérothérapie |
+| `madero-outils.jpg`, `madero-1/2.jpg` | Carte madérothérapie (3 photos en bas) |
 | `lara-portrait.jpg` | Qui suis-je |
 | `bb-1/2/3.jpg`, `force-1/2/3.jpg`, `autre-1/2.jpg` | Parcours sportif |
 | `logo.png`, `logo-small.png`, `favicon.png` | Logo |
@@ -48,11 +48,13 @@ Si la nouvelle photo n'a pas les mêmes proportions, mettre à jour `width` et `
 
 ## Ajouter un témoignage
 
-Dans `<!-- Témoignages -->`, copier un bloc `<figure class="temoin">…</figure>` et changer le texte, le prénom et la prestation. Le carrousel s'adapte tout seul au nombre de témoignages.
+Il y a un bloc d'avis par partie : `<!-- Témoignages coaching -->`, `<!-- Témoignages deep tissue -->`, `<!-- Témoignages madérothérapie -->`. Dans le bon bloc, copier un `<figure class="temoin">…</figure>` et changer le texte, le prénom et la prestation. Le carrousel s'adapte tout seul au nombre d'avis ; avec un seul avis, il s'affiche en simple carte.
+
+Pour créer un bloc d'avis dans une autre partie (ex. alimentation), copier un bloc `<section class="temoignages">…</section>` entier et changer son commentaire, son `aria-label` et la ligne `temoins-sujet`.
 
 ## Numéro de téléphone
 
-Chercher `[NUMÉRO DE TÉLÉPHONE]` et `tel:+33600000000` dans `index.html` (format du lien : `tel:+33612345678`).
+Il apparaît dans `index.html` (section contact) et `mentions-legales.html`. Changer le lien `tel:+33760219549` **et** le texte affiché `07 60 21 95 49`.
 
 ## Sécurité
 

@@ -75,12 +75,12 @@
   }
 
   /* ------------------------------------------------------------------
-   * Carrousel des témoignages : glissable au doigt ou à la souris,
-   * flèches, points, flèches du clavier, défilement automatique.
+   * Carrousels des témoignages (un par partie : coaching, deep tissue,
+   * madérothérapie…) : glissables au doigt ou à la souris, flèches,
+   * points, flèches du clavier, défilement automatique.
+   * Un bloc avec un seul avis reste une simple carte.
    * ------------------------------------------------------------------ */
-  (function () {
-    var bloc = document.querySelector('.temoignages');
-    if (!bloc) return;
+  Array.prototype.forEach.call(document.querySelectorAll('.temoignages'), function (bloc) {
     var piste = bloc.querySelector('.temoins-piste');
     var slides = Array.prototype.slice.call(bloc.querySelectorAll('.temoin'));
     var pointsBox = bloc.querySelector('.temoins-points');
@@ -234,7 +234,7 @@
     marquer();
     ressort.placer(0);
     relancer();
-  })();
+  });
 
   /* ------------------------------------------------------------------
    * En-tête : ombre légère seulement quand du contenu passe dessous,
