@@ -237,6 +237,27 @@
   });
 
   /* ------------------------------------------------------------------
+   * Bouton « revenir en haut » : caché en haut de page, visible dès
+   * qu'on a descendu d'un écran. Sans JavaScript, il reste visible.
+   * ------------------------------------------------------------------ */
+  (function () {
+    var bouton = document.querySelector('.retour-haut');
+    if (!bouton) return;
+    var majVisibilite = function () {
+      bouton.classList.toggle('cache', window.scrollY < window.innerHeight * 0.8);
+    };
+    majVisibilite();
+    window.addEventListener('scroll', majVisibilite, { passive: true });
+    bouton.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: reduit ? 'auto' : 'smooth' });
+      // le focus revient au logo, pour la navigation au clavier
+      var logo = document.querySelector('.marque');
+      if (logo) logo.focus({ preventScroll: true });
+    });
+  })();
+
+  /* ------------------------------------------------------------------
    * En-tête : ombre légère seulement quand du contenu passe dessous,
    * et lien du menu qui indique la section en cours.
    * ------------------------------------------------------------------ */
